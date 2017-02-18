@@ -4,6 +4,10 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.TextView;
+
+import java.util.List;
 
 /**
  * @author Wbin
@@ -16,9 +20,12 @@ import android.view.ViewGroup;
 public class RecycieViewAdapter extends RecyclerView.Adapter<RecycieViewAdapter.ViewHolder> {
 
     private Context context;
+    private List<String> data;
 
-    public void RecycieViewAdapter(Context context) {
+    public RecycieViewAdapter(Context context, List<String> data) {
+        super();
         this.context = context;
+        this.data = data;
     }
 
 
@@ -35,15 +42,29 @@ public class RecycieViewAdapter extends RecyclerView.Adapter<RecycieViewAdapter.
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+
+    @Override
     public int getItemCount() {
         return 0;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
+        private CheckBox cb;
+        private TextView fastName, orderNum, orderDate, orderTime;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            cb = (CheckBox) itemView.findViewById(R.id.cb);
+            fastName = (TextView) itemView.findViewById(R.id.fastName);
+            orderNum = (TextView) itemView.findViewById(R.id.orderNum);
+            orderTime = (TextView) itemView.findViewById(R.id.orderTime);
         }
+
+
     }
 }
