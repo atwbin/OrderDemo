@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_48"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    app:popupTheme="@style/ToolbarPopupTheme"
+    app:subtitleTextAppearance="@style/ToolbarSubTitle"
+    app:theme="@style/ToolbarTheme"
+    app:titleTextAppearance="@style/ToolbarTitle">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/qp_sf"
+            android:padding="@dimen/dp_5" />
+
+        <TextView
+            android:id="@+id/numOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:padding="@dimen/dp_5"
+            android:text="8"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="确认收货"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+
+</android.support.v7.widget.Toolbar>
