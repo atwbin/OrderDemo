@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.aesion.snapupdowntimerview.SnapUpCountDownTimerView;
+
 import java.util.List;
 
 /**
@@ -55,14 +57,17 @@ public class RecycieViewAdapter extends RecyclerView.Adapter<RecycieViewAdapter.
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         private CheckBox cb;
-        private TextView fastName, orderNum, orderDate, orderTime;
+        private TextView fastName, orderNum, orderDate;
+        private SnapUpCountDownTimerView orderTime;
 
         public ViewHolder(View itemView) {
             super(itemView);
             cb = (CheckBox) itemView.findViewById(R.id.cb);
             fastName = (TextView) itemView.findViewById(R.id.fastName);
             orderNum = (TextView) itemView.findViewById(R.id.orderNum);
-            orderTime = (TextView) itemView.findViewById(R.id.orderTime);
+            orderTime = (SnapUpCountDownTimerView) itemView.findViewById(R.id.orderTime);
+            orderTime.setTime(23, 59, 59);
+            orderTime.start();
         }
 
 
