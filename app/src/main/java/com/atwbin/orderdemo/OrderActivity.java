@@ -6,7 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 
-import com.atwbin.orderdemo.model.TimeLineModel;
+import com.atwbin.orderdemo.adapter.FirstAdapter;
+import com.atwbin.orderdemo.adapter.SecondAdapter;
+import com.atwbin.orderdemo.entity.FirstData;
+import com.atwbin.orderdemo.entity.SecondData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,37 +21,43 @@ public class OrderActivity extends AppCompatActivity {
 
     @Bind(R.id.recyclerView)
     RecyclerView mRecycieView;
-    RecycieViewAdapter mAdapter;
-   private List<GoodBean> datas;
+    FirstAdapter fAdapter;
+    private List<SecondData> secondDatas;
+    private List<FirstData> firstDatas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        datas = new ArrayList<>();
+        initData();
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(OrientationHelper.VERTICAL);
         mRecycieView.setLayoutManager(manager);
-        mAdapter = new RecycieViewAdapter(this, getData());
-        mRecycieView.setAdapter(mAdapter);
+        fAdapter = new FirstAdapter(this, firstDatas,secondDatas);
+        mRecycieView.setAdapter(fAdapter);
+
+
     }
 
-    private List<TimeLineModel> getData() {
-        List<TimeLineModel> models = new ArrayList<TimeLineModel>();
+    private void initData() {
+        firstDatas = new ArrayList<>();
 
-        models.add(new TimeLineModel("你提交了订单，请等待系统确认", "2016-08-09","花花"));
-        models.add(new TimeLineModel("你的订单从德国发货，预计8-22能送达", "2016-08-09","花花"));
-        models.add(new TimeLineModel("打包成功", "2016-08-10","花花"));
-        models.add(new TimeLineModel("扫描员已经扫描完成", "2016-08-10","花花"));
-        models.add(new TimeLineModel("正在运送中 ... ", "2016-08-12","花花"));
-        models.add(new TimeLineModel("到达HK海关 ... ", "2016-08-15","花花"));
-        models.add(new TimeLineModel("海关 清关中... ", "2016-08-19","花花"));
-        models.add(new TimeLineModel("正在送往深圳中康站... ", "2016-08-20","花花"));
-        models.add(new TimeLineModel("正在配送中，请保持手机通畅", "2016-08-21","花花"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
+        firstDatas.add(new FirstData("圆通", "2016-01-11", "12:25:06"));
 
-        return models;
+        secondDatas = new ArrayList<>();
+        secondDatas.add(new SecondData("ass", "，名称", 1));
+        secondDatas.add(new SecondData("ass", "，名称", 2));
+        secondDatas.add(new SecondData("ass", "，名称", 3));
+
+
     }
-
 
 }

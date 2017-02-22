@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/cb"
+            android:singleLine="true"
             android:text="@string/fast_email" />
 
         <TextView
@@ -43,6 +44,7 @@
             android:layout_marginRight="@dimen/dp_5"
             android:layout_toLeftOf="@+id/orderDate"
             android:layout_toRightOf="@+id/fastName"
+            android:singleLine="true"
             android:text="234567890" />
 
         <TextView
@@ -52,6 +54,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_10"
             android:layout_toLeftOf="@+id/orderTime"
+            android:singleLine="true"
             android:text="2017-01-11" />
 
         <com.aesion.snapupdowntimerview.SnapUpCountDownTimerView
@@ -71,6 +74,13 @@
         android:layout_height="2dp"
         android:layout_below="@+id/lin"
         android:background="@android:color/darker_gray"></View>
+
+    <com.atwbin.orderdemo.views.MyRecycleView
+        android:id="@+id/myRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view2"
+        android:layout_marginTop="@dimen/dp_5"></com.atwbin.orderdemo.views.MyRecycleView>
 
 
 </RelativeLayout>
