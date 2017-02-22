@@ -14,7 +14,6 @@ import com.aesion.snapupdowntimerview.SnapUpCountDownTimerView;
 import com.atwbin.orderdemo.R;
 import com.atwbin.orderdemo.entity.FirstData;
 import com.atwbin.orderdemo.entity.SecondData;
-import com.atwbin.orderdemo.model.TimeLineModel;
 import com.atwbin.orderdemo.views.MyRecycleView;
 
 import java.util.List;

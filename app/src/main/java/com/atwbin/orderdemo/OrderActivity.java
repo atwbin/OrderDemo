@@ -7,7 +7,6 @@ import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 
 import com.atwbin.orderdemo.adapter.FirstAdapter;
-import com.atwbin.orderdemo.adapter.SecondAdapter;
 import com.atwbin.orderdemo.entity.FirstData;
 import com.atwbin.orderdemo.entity.SecondData;
 
